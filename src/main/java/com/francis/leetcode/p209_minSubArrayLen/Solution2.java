@@ -3,12 +3,11 @@ package com.francis.leetcode.p209_minSubArrayLen;
 import org.junit.Test;
 
 /**
- * 优化的暴力求解
- * <p>
- * 执行用时 : 88 ms
- * 内存消耗 : 37.4 MB
+ * time:O(n^2)
+ * space:O(n)
  *
- * @author hzzhugequn@corp.netease.com
+ * @author zhugequn
+ * @since jdk8
  */
 public class Solution2 {
 

@@ -3,10 +3,11 @@ package com.francis.leetcode.p209_minSubArrayLen;
 import org.junit.Test;
 
 /**
- * 纯纯的暴力求解
- * 超出时间限制
+ * time:O(n^3)
+ * space:O(1)
  *
- * @author hzzhugequn@corp.netease.com
+ * @author zhugequn
+ * @since jdk8
  */
 public class Solution1 {
 
