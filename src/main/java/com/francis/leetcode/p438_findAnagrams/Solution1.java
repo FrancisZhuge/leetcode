@@ -1,5 +1,7 @@
 package com.francis.leetcode.p438_findAnagrams;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,9 +28,9 @@ public class Solution1 {
         int l = 0, r = -1;
         int[] freq_s = new int[26];
         while (r + 1 < s_n) {
-            freq_s[s.charAt(++r)]++;
+            freq_s[s.charAt(++r) - 'a']++;
             if (r - l + 1 > p_n)
-                freq_s[s.charAt(l++)]--;
+                freq_s[s.charAt(l++) - 'a']--;
             if (r - l + 1 == p_n && same(freq_p, freq_s))
                 ans.add(l);
         }
@@ -40,5 +42,16 @@ public class Solution1 {
             if (a[i] != b[i])
                 return false;
         return true;
+    }
+
+    @Test
+    public void test() {
+        String s = "cbaebabacd";
+        String p = "abc";
+        System.out.println(findAnagrams(s, p));
+
+        s = "abab";
+        p = "ab";
+        System.out.println(findAnagrams(s, p));
     }
 }
