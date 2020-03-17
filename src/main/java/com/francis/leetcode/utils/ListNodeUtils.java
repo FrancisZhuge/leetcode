@@ -32,4 +32,15 @@ public class ListNodeUtils {
         }
         System.out.println();
     }
+
+    public static ListNode findList(ListNode head, int target) {
+        ListNode cur = head;
+        while (cur != null) {
+            if (cur.val == target) {
+                return cur;
+            }
+            cur = cur.next;
+        }
+        throw new RuntimeException("not find");
+    }
 }
