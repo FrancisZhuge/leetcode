@@ -119,4 +119,14 @@ public class Utils {
         }
         System.out.println();
     }
+
+    public static void print2Arrays(boolean[][] arrays) {
+        for (int i = 0; i < arrays.length; i++) {
+            for (int j = 0; j < arrays[0].length; j++) {
+                System.out.print(String.format("%-6s", arrays[i][j]));
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
 }
