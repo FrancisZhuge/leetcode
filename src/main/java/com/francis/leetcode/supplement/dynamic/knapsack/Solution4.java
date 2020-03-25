@@ -1,0 +1,38 @@
+package com.francis.leetcode.supplement.dynamic.knapsack;
+
+import org.junit.Test;
+
+/**
+ * 0-1背包问题
+ * <p>
+ * 有一个背包，容量C(Capacity)。现在有n中不同的物品，编号为0,...,n-1
+ * 其中每一件物品的重量为w(i)，价值为v(i)。问可以向这个背包中盛放那些物品，使得在不超过背包容量的基础上，物品的总价值最大。
+ * <p>
+ * F(n,C)考虑将n个物品放进容量为C的背包，使得价值最大
+ * F(i,C) = max ( F(i-1,C) , v(i) + F(i-1,c-w(i)) )
+ *
+ * 只会使用上一行的上方和作坊的元素
+ * @author zhugequn
+ * @since jdk8
+ */
+public class Solution4 {
+
+    public int knapsack(int[] w, int[] v, int c) {
+        int n = w.length;
+        int[] dp = new int[c + 1];
+        for (int i = 0; i <= c; i++)
+            dp[i] = (i >= w[0] ? v[0] : 0);
+        for (int i = 1; i < n; i++)
+            for (int j = c; j >= w[i]; j--) {
+                dp[j] = Math.max(dp[j], v[i] + dp[j - w[i]]);
+            }
+        return dp[c];
+    }
+
+    @Test
+    public void test() {
+        int[] w = {1, 2, 3};
+        int[] v = {6, 10, 12};
+        System.out.println(knapsack(w, v, 5));
+    }
+}
