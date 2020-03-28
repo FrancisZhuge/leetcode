@@ -122,6 +122,24 @@ public class Array<E> {
     }
 
     /**
+     * 获取最后的元素
+     *
+     * @return 最后的元素
+     */
+    public E getLast() {
+        return get(size - 1);
+    }
+
+    /**
+     * 获取最开始的元素
+     *
+     * @return 最开始的元素
+     */
+    public E getFirst() {
+        return get(0);
+    }
+
+    /**
      * 修改index索引位置的元素为e
      *
      * @param index 索引
